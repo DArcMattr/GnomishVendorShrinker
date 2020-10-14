@@ -27,7 +27,7 @@ end
 
 
 function ns.NewQtyPopoutFrame(parent)
-	local frame = CreateFrame("Button", nil, parent)
+	local frame = CreateFrame("Button", nil, parent, BackdropTemplateMixin and "BackdropTemplate")
 
 	frame:SetNormalTexture("Interface\\PaperDollInfoFrame\\UI-GearManager-FlyoutButton")
 	frame:SetHighlightTexture("Interface\\PaperDollInfoFrame\\UI-GearManager-FlyoutButton")

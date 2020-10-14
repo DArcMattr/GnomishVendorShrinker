@@ -39,7 +39,7 @@ end
 -- Creates a scrollbar
 -- Parent is required, offset and step are optional
 function ns.NewScrollBar(parent, offset, step)
-	local f = CreateFrame("Slider", nil, parent)
+	local f = CreateFrame("Slider", nil, parent, BackdropTemplateMixin and "BackdropTemplate")
 	f:SetWidth(16)
 
 	f:SetPoint("TOP", 0, -16 - (offset or 0))
@@ -51,7 +51,7 @@ function ns.NewScrollBar(parent, offset, step)
 	f.Decrement = Decrement
 	f.Increment = Increment
 
-	local up = CreateFrame("Button", nil, f)
+	local up = CreateFrame("Button", nil, f, BackdropTemplateMixin and "BackdropTemplate")
 	up:SetPoint("BOTTOM", f, "TOP")
 	up:SetSize(16, 16)
 	up:SetNormalTexture("Interface\\Buttons\\UI-ScrollBar-ScrollUpButton-Up")
@@ -68,7 +68,7 @@ function ns.NewScrollBar(parent, offset, step)
 	up:SetScript("OnClick", OnClickUp)
 	up:SetScript("PostClick", Sound)
 
-	local down = CreateFrame("Button", nil, f)
+	local down = CreateFrame("Button", nil, f, BackdropTemplateMixin and "BackdropTemplate")
 	down:SetPoint("TOP", f, "BOTTOM")
 	down:SetSize(16, 16)
 	down:SetNormalTexture("Interface\\Buttons\\UI-ScrollBar-ScrollDownButton-Up")
@@ -100,7 +100,7 @@ function ns.NewScrollBar(parent, offset, step)
 	f:HookScript("OnMinMaxChanged", UpdateUpDown)
 	f:HookScript("OnValueChanged", UpdateUpDown)
 
-	local border = CreateFrame("Frame", nil, f)
+	local border = CreateFrame("Frame", nil, f, BackdropTemplateMixin and "BackdropTemplate")
 	border:SetPoint("TOPLEFT", up, -5, 5)
 	border:SetPoint("BOTTOMRIGHT", down, 5, -3)
 	border:SetBackdrop(BACKDROP)

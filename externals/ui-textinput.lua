@@ -17,7 +17,7 @@ end
 
 local FONT = "GameFontHighlightSmall"
 function ns.NewTextInput(parent)
-  local editbox = CreateFrame("EditBox", nil, parent)
+  local editbox = CreateFrame("EditBox", nil, parent, BackdropTemplateMixin and "BackdropTemplate")
   editbox:SetAutoFocus(false)
   editbox:SetSize(105, 32)
   editbox:SetFontObject(FONT)

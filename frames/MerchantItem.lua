@@ -165,7 +165,7 @@ end
 
 
 function ns.NewMerchantItemFrame(parent)
-	local frame = CreateFrame("Button", nil, parent)
+	local frame = CreateFrame("Button", nil, parent, BackdropTemplateMixin and "BackdropTemplate")
 	frame:SetHeight(HEIGHT)
 
 	frame:SetHighlightTexture("Interface\\HelpFrame\\HelpFrameButton-Highlight")
@@ -186,7 +186,7 @@ function ns.NewMerchantItemFrame(parent)
 	backdrop:SetTexture("Interface\\Tooltips\\UI-Tooltip-Background")
 	frame.backdrop = backdrop
 
-	local icon = CreateFrame('Frame', nil, frame)
+	local icon = CreateFrame('Frame', nil, frame, BackdropTemplateMixin and "BackdropTemplate")
 	icon:SetHeight(ICONSIZE)
 	icon:SetWidth(ICONSIZE)
 	icon:SetPoint('LEFT', 2, 0)

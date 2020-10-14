@@ -53,7 +53,7 @@ end
 
 
 function ns.NewAltCurrencyItemFrame(parent)
-	local frame = CreateFrame("Frame", nil, parent)
+	local frame = CreateFrame("Frame", nil, parent, BackdropTemplateMixin and "BackdropTemplate")
 	frame:SetSize(ICONSIZE, ICONSIZE)
 
 	local text = frame:CreateFontString(nil, nil, "NumberFontNormalSmall")

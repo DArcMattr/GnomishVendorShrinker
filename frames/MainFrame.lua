@@ -10,7 +10,7 @@ local NUMROWS = 14
 
 
 function ns.NewMainFrame()
-	local GVS = CreateFrame("frame", nil, MerchantBuyBackItem)
+	local GVS = CreateFrame("frame", nil, MerchantBuyBackItem, BackdropTemplateMixin and "BackdropTemplate")
 
 	local search = ns.NewSearchField(GVS)
 
