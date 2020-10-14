@@ -32,7 +32,7 @@ end
 
 
 local function Sound()
-	PlaySound("UChatScrollButton")
+	PlaySoundKit(SOUNDKIT.UChatScrollButton)
 end
 
 
